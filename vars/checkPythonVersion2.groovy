@@ -1,3 +1,3 @@
 def executePythonVersion() {
-    sh 'git --version'
+    bat 'git --version'
 }
