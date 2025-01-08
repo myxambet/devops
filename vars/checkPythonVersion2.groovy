@@ -1,3 +1,3 @@
 def executePythonVersion() {
-    bat 'git --version'
+    bat 'ver'
 }
