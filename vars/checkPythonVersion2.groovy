@@ -1,3 +1,3 @@
 def executePythonVersion() {
-    bat 'ver'
+    echo 'Urralsk'
 }
