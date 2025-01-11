@@ -2,7 +2,7 @@
 def call() {
    
     
-    sh """
+    bat """
      wsl ansible-playbook -i inventory/host.ini playbook.yml  --ask-vault-password
      """
     
