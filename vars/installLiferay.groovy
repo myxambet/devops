@@ -1,5 +1,5 @@
 // vars/installLiferay.groovy
-def installLiferay() {
+def call() {
    
     
     sh """
