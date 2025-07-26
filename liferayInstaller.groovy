@@ -14,7 +14,7 @@ string(name: 'DEPLOY_ENV', defaultValue: params.DEPLOY_ENV ?:'staging', descript
           sandbox: true,
           classpath: [],
           script: '''
-           return Environment ? [Environment] : ["dev:selected", "staging", "production"] 
+           return params.Environment ?: "dev"
           '''
         ]
       ]
