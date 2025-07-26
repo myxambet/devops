@@ -12,7 +12,7 @@ properties([
           sandbox: true,
           classpath: [],
           script: '''
-            return ["dev", "staging", "production"]
+            return  ["dev", "staging", "production"] && abc = params.Environment
           '''
         ]
       ]
@@ -26,7 +26,8 @@ pipeline {
   stages {
     stage('Показать окружение') {
       steps {
-        echo "Вы выбрали окружение: ${params.Environment}"
+        def abc = ""
+        echo "Вы выбрали окружение: ${abc}"
       }
     }
   }
