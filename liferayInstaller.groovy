@@ -14,7 +14,11 @@ string(name: 'DEPLOY_ENV', defaultValue: params.DEPLOY_ENV ?:'staging', descript
           sandbox: true,
           classpath: [],
           script: '''
-           return params.Environment ?: "dev"
+           if (binding.hasVariable('Environment') && Environment) {
+    return [Environment]
+} else {
+    return ["dev", "staging", "production"]
+}
           '''
         ]
       ]
