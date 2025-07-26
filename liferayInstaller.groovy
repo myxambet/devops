@@ -12,7 +12,7 @@ properties([
           sandbox: true,
           classpath: [],
           script: '''
-            return  ["dev", "staging", "production"] && abc = params.Environment
+            return  abc = params.Environment & ["dev", "staging", "production"]  
           '''
         ]
       ]
