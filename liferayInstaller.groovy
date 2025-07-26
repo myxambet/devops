@@ -14,7 +14,7 @@ hidden(name: 'hidden_param', defaultValue: 'hidden_value', description: 'Hidden 
           sandbox: true,
           classpath: [],
           script: '''
-           if (hidden_param==true) {
+           if (params.Environment=true) {
 
     return ["dev", "staging", "production"]
 } else {
