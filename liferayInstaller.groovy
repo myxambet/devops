@@ -1,7 +1,6 @@
 properties([
   parameters([
 string(name: 'DEPLOY_ENV', defaultValue: params.DEPLOY_ENV ?:'staging', description: ''),
- hidden(name: 'hidden_param', defaultValue: 'false', description: 'Hidden parameter'),
 
     [$class: 'ChoiceParameter',
       name: 'Environment',
@@ -15,9 +14,9 @@ string(name: 'DEPLOY_ENV', defaultValue: params.DEPLOY_ENV ?:'staging', descript
           sandbox: true,
           classpath: [],
           script: '''
-           if (hidden_param==true) {
-            echo "${hidden_param}"
-    return ["123", "s312", "producetion"]
+           if (params.Environment==true) {
+
+    return ["dev", "staging", "production"]
 } else {
     return ["dev", "staging", "production"]
 }
