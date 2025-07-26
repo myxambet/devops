@@ -1,7 +1,7 @@
 properties([
   parameters([
 string(name: 'DEPLOY_ENV', defaultValue: params.DEPLOY_ENV ?:'staging', description: ''),
-hidden(name: 'hidden_param', defaultValue: 'hidden_value', description: 'Hidden parameter')
+hidden(name: 'hidden_param', defaultValue: 'hidden_value', description: 'Hidden parameter'),
     [$class: 'ChoiceParameter',
       name: 'Environment',
       description: 'Select target environment',
