@@ -14,8 +14,9 @@ string(name: 'DEPLOY_ENV', defaultValue: params.DEPLOY_ENV ?:'staging', descript
           sandbox: true,
           classpath: [],
           script: '''
-           if (binding.hasVariable('Environment') && Environment) {
-    return [Environment]
+           if (params.Environment==true) {
+    trig = "BOOO"
+    return ["dev", "staging", "production"]
 } else {
     return ["dev", "staging", "production"]
 }
@@ -33,6 +34,7 @@ pipeline {
     stage('Пример') {
       steps {
         script {
+          
           def trig = false
           echo "trig = ${trig}"
           echo "${params.Environment}"
