@@ -24,10 +24,12 @@ pipeline {
   agent any
 
   stages {
-    stage('Показать окружение') {
+    stage('Пример') {
       steps {
-        def abc = ""
-        echo "Вы выбрали окружение: ${abc}"
+        script {
+          def abc = ""
+          echo "abc = ${abc}"
+        }
       }
     }
   }
