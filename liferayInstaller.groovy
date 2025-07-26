@@ -1,7 +1,8 @@
 pipeline {
     agent any
 
-   parameters([
+  properties([
+  parameters([
     [$class: 'ChoiceParameter',
       name: 'Environment',
       description: 'Select target environment',
@@ -20,6 +21,7 @@ pipeline {
       ]
     ]
   ])
+])
 
     stages {
         stage('Показать приветствие') {
