@@ -1,5 +1,7 @@
 properties([
   parameters([
+string(name: 'DEPLOY_ENV', defaultValue: params.DEPLOY_ENV ?:'staging', description: ''),
+
     [$class: 'ChoiceParameter',
       name: 'Environment',
       description: 'Select target environment',
@@ -29,7 +31,8 @@ pipeline {
         script {
           def abc = ""
           echo "abc = ${abc}"
-          echo "abc = ${params.Environment}"
+          echo "${params.Environment}"
+          echo "${params.DEPLOY_ENV}"
         }
       }
     }
