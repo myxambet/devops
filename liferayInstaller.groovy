@@ -1,8 +1,5 @@
-pipeline {
-    agent any
-    
-
-  options([
+properties([
+  parameters([
     [$class: 'ChoiceParameter',
       name: 'Environment',
       description: 'Select target environment',
@@ -21,12 +18,16 @@ pipeline {
       ]
     ]
   ])
+])
 
-    stages {
-        stage('Показать приветствие') {
-            steps {
-                echo "Значение параметра GREETING: ${params.GREETING}"
-            }
-        }
+pipeline {
+  agent any
+
+  stages {
+    stage('Показать окружение') {
+      steps {
+        echo "Вы выбрали окружение: ${params.Environment}"
+      }
     }
+  }
 }
