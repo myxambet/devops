@@ -29,6 +29,7 @@ pipeline {
         script {
           def abc = ""
           echo "abc = ${abc}"
+          echo "abc = ${params.Environment}"
         }
       }
     }
