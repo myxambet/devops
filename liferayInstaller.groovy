@@ -33,10 +33,10 @@ pipeline {
     stage('Пример') {
       steps {
         script {
-          def abc = ""
-          echo "abc = ${abc}"
+          def trig = false
+          echo "trig = ${trig}"
           echo "${params.Environment}"
-          echo "${params.DEPLOY_ENV}"
+          echo "${trig}"
         }
       }
     }
