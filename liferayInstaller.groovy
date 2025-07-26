@@ -5,7 +5,7 @@ string(name: 'DEPLOY_ENV', defaultValue: params.DEPLOY_ENV ?:'staging', descript
         name('param_hidden')
         defaultValue('hidden_value')
         description('Hidden parameter')
-    }
+    },
     [$class: 'ChoiceParameter',
       name: 'Environment',
       description: 'Select target environment',
