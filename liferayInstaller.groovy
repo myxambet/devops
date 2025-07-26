@@ -1,11 +1,6 @@
 properties([
   parameters([
 string(name: 'DEPLOY_ENV', defaultValue: params.DEPLOY_ENV ?:'staging', description: ''),
- hidden {
-        name('param_hidden')
-        defaultValue('hidden_value')
-        description('Hidden parameter')
-    },
     [$class: 'ChoiceParameter',
       name: 'Environment',
       description: 'Select target environment',
@@ -38,10 +33,10 @@ pipeline {
     stage('Пример') {
       steps {
         script {
-          
+          def secretValue = params.SECRET_PARAM ?: 'default'
           def trig = false
           echo "trig = ${trig}"
-          echo "${params.Environment}"
+          echo "${secretValue}"
           echo "${trig}"
         }
       }
